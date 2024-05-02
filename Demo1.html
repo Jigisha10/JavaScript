@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- head tag script use -->
+    <script>
+        function myfunction() {
+            document.getElementById('title').innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+        }
+    </script>
+</head>
+
+<body>
+    <h2 style="color: #0077ff"> JS Introduction</h2>
+
+    <hr />
+    <!-- javscript change HTML content  -->
+    <h3>1. Change Html Content</h3>
+    <p id="demo">Content change HTML CSS BOOTSRAP</p>
+    <button type="button" onclick="document.getElementById('demo').innerHTML='Hello JavaScript'">Click</button>
+    <br /> <br />
+
+    <!-- Display Date and Time -->
+    <h3>2. Display Date and Time</h3>
+    <button type="button" onclick='document.getElementById("DateTime").innerHTML=Date()'>Display Date and Time</button>
+    <p id="DateTime"></p>
+    <br />
+
+    <!-- HTML Attribute Values -->
+    <h3>3. Attribute Values</h3>
+    <img id="myimage" src="https://www.w3schools.com/js/pic_bulboff.gif" />
+    <button type="button" onclick='getElementById("myimage").src="https://www.w3schools.com/js/pic_bulbon.gif"'>Turn on
+        the light</button>
+    <button type="button" onclick='getElementById("myimage").src="https://www.w3schools.com/js/pic_bulboff.gif"'>Turn
+        off the light</button>
+    <br /> <br />
+
+    <!-- Changes Style of an HTML element -->
+
+    <h3>4. Style of an HTML element </h3>
+    <p id="Stylecss">What is Lorem Ipsum?</p>
+    <button type="button" onclick="document.getElementById('Stylecss').style.fontSize='35px'">Font Size Change</button>
+    <button type="button" onclick="document.getElementById('Stylecss').style.display='none'">Hide Tax</button>
+    <button type="button" onclick="document.getElementById('Stylecss').style.display='block'">Show Tax</button>
+    <br /><br />
+
+    <hr />
+    <h2 style="color: #0077ff">JS Where To</h2>
+    <hr />
+
+    <!-- script tag use -->
+    <h3>1. Inserted script tag Use</h3>
+    <p id="scripttag"></p>
+    <script>
+        document.getElementById('scripttag').innerHTML = "First Javascript";
+    </script>
+    <br />
+
+    <!-- JavaScript in head or body -->
+    <h3>JavaScript in head tag</h3>
+
+    <p id="title">A Paragraph tax</p>
+    <button type="button" onclick="myfunction()">try it</button>
+    </br>
+    <hr />
+    <h2 style="color: #0077ff">JS OutPut</h2>
+    <hr />
+
+    <h3>Using innerHTML </h3>
+    
+    
+</body>
+
+</html>
