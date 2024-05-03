@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo2</title>
+</head>
+
+<body>
+
+    <h2 style="color: #0077ff"> JS syntax</h2>
+    <hr />
+
+    <!-- JavaScript Operators arithmetic operators ( + - * / ) to compute  -->
+
+    <h3>1. JavaScript Operators</h3>
+    <p id="myvalue"></p>
+    <script>
+        document.getElementById('myvalue').innerHTML = (5 + 10) * 10;
+    </script>
+
+    <!-- JavaScript assignment operator ( = ) to assign values   -->
+
+    <h3>2. JavaScript assignment Operators </h3>
+    <p id="value1"></p>
+    <script>
+        let x, y;
+        x = 10;
+        y = 26;
+        document.getElementById("value1").innerHTML = x + y;
+    </script>
+
+    <h3>3. JavaScript Expressions</h3>
+
+    <h4>3.1 contain variable values:</h4>
+    <p id="value2"></p>
+    <script>
+        let a;
+        a = 5;
+        document.getElementById("value2").innerHTML = a * 15;
+    </script>
+
+    <h4>3.2 The values can be of various types, such as numbers and strings.</h4>
+    <p id="value3"></p>
+    <script>
+        document.getElementById("value3").innerHTML = "Jigisha" + " " + "Ahir";
+    </script>
+
+    <h3>4. JavaScript Keyword</h3>
+    <!-- let keyword tells the browser to create variables -->
+    <h4>4.1 Let Keyword </h4>
+    <p id="value4"></p>
+    <script>
+        let P, Q;
+        P = 5 + 6;
+        Q = x * 10;
+        document.getElementById("value4").innerHTML = Q;
+    </script>
+    <h4>4.2 Var Keyword</h4>
+    <p id="value5"></p>
+    <script>
+        var p, z;
+        p = 10 + 15;
+        z = p * 10;
+        document.getElementById("value5").innerHTML = z;
+    </script>
+    <br />
+
+    <!-- JavaScript is Case Sensitive -->
+    <h3>Case Sensitive</h3>
+    <p id="value6"></p>
+    <script>
+        var lastname, lastname;
+        lastname = "Patel";
+        lastname = "Ahir";
+        document.getElementById("value6").innerHTML = lastname;
+    </script>
+    <!-- <script>
+        var lastname, lastName;
+        lastName = "Doe";
+        lastname = "Peterson";
+        document.getElementById("demo10").innerHTML = lastName;
+    </script> -->
+</body>
+
+</html>

@@ -71,7 +71,7 @@
     <p id="digit"></p>
     <script>
         document.getElementById('digit').innerHTML = 5 + 6;
-        document.write(5 + 6)
+        document.write('Jigisha')
     </script>
     <button type="button" onclick="document.write(5 + 6)">Try it</button>
     <br />
@@ -92,10 +92,39 @@
     <br/>
 
     <!-- JavaScript Print -->
-    <h3>4. JavaScript Print </h3>
+    <h3 >4. JavaScript Print </h3>
     <button type="button" onclick="window.print()">Javascript print</button>
+    <br/>
     
+    <hr/>
+    <h2 style="color: #0077ff">JavaScript Statements</h2>
+    <hr/>
 
+    <!-- Semicolons -->
+    <h3>Semicolons;</h3>
+    <P id="value"></P>
+    <script>
+        let a,b,c;
+        a = 15;
+        b = 10;
+        c = a + b;
+        document.getElementById('value').innerHTML= c;
+    </script>
+    <br/>
+
+    <!-- javscript code block inside in curly brakets -->
+    <h3> JavaScript Code Block</h3>
+    <button type="button" onclick="mydata()">Click</button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        function mydata(){
+            document.getElementById("demo1").innerHTML="Hello Sonal";
+            document.getElementById("demo2").innerHTML="How are you!";
+
+        }
+    </script>
 </body>
 
 </html>
