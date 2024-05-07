@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="color: #0077ff"> JS variables</h2>
+    <hr />
+    <h3>JavaScript Data Types</h3>
+    <!-- double or single quotes. Numbers are written without quotes. -->
+    <p id="demo1"></p>
+    <script>
+        const pi = 3.14;
+        let person = "John Doe";
+        let answer = 'yes i am!';
+        document.getElementById('demo1').innerHTML = pi + "<br>" + person + "<br>" + answer;
+    </script>
+    <br />
+    <!-- Value = undefined -->
+    <h3> Value undefined </h3>
+    <p id="demo2"></p>
+    <script>
+        let carName;
+        document.getElementById("demo2").innerHTML = carName;
+    </script>
+    <br />
+
+    <!-- Re-declare  -->
+    <h3>Re-Declaring JavaScript Variables</h3>
+    <p id="demo3"></p>
+    <script>
+        let x = 5 + 2 + 3;
+        document.getElementById("demo3").innerHTML = x;
+    </script>
+
+    <!-- JavaScript Dollar Sign $ -->
+    <h3>JavaScript Dollar Sign</h3>
+    <p id="demo4"></p>
+    <script>
+       // let $ = "Hello World";
+        let $$$ = 2;
+        let $myMoney = 5 ;
+        document.getElementById('demo4').innerHTML =  $$$ + $myMoney;
+       // document.getElementById('demo4').innerHTML = $ + "&nbsp;&nbsp;" + $$$ + $myMoney;
+    </script>
+<!-- JavaScript Underscore (_) -->
+<h3>JavaScript Underscore</h3>
+<p id="demo5"></p>
+<script>
+    let _x = 2;
+    let _100 = 5;
+    document.getElementById("demo5").innerHTML = _x + _100;
+</script>
+
+</body>
+
+</html>
