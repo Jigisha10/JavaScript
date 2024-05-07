@@ -107,6 +107,19 @@
         // Display the array;
         document.getElementById("cons1").innerHTML = car;
     </script>
+
+    <h3>2. Constant Object</h3>
+    <!-- You can change the properties of a constant object: -->
+    <p id="cons2"></p>
+    <script>
+        // create an object
+        const bike = { type:"Activa", model:"6G", color:"white" };
+        // change an property
+        bike.color = "red";
+        // Add a propery
+        bike.owner = "jigisha";
+        document.getElementById("cons2").innerHTML= " Bike Owner is " + bike.owner;
+    </script>
 </body>
 
 </html>
