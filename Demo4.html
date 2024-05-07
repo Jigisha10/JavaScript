@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="color: #0077ff"> JS Let</h2>
+    <hr />
+
+    <h3>1. Redeclaring Variables</h3>
+    <!-- using the var keyword  -->
+    <h4>1.1 Using the var keyword</h4>
+    <p id="variable"></p>
+    <script>
+        var x = 10;
+        // Here x is 10
+        {
+            var x = 20;
+            // Here x is 2
+        }
+
+        document.getElementById("variable").innerHTML = x;
+        // here x is 2
+    </script>
+
+    <h4>1.2 Using the let keyword </h4>
+    <!-- using the let keyword  -->
+    <p id="variable1"></p>
+    <script>
+        let y = 5;
+        {
+            let y = 20;
+        }
+        document.getElementById("variable1").innerHTML = y;
+    </script>
+
+    <!-- With let, redeclaring a variable in the same block is NOT allowed: -->
+    <h4>With let, redeclaring a variable in the same block is NOT allowed:</h4>
+    <!-- <p id = "varible3"></p>
+     <script>
+        var x = 3;
+       // let x = 4; // Not Allowed
+        {
+            let x = 5;
+            // let x = 6; // Not Allowed
+        }
+        let x = 3;
+        //var x = 4 ; // Not Allowed
+        document.getElementById("variable3").innerHTML = x;
+     </script> -->
+
+    <!-- Redeclaring a variable with let, in another block, IS allowed: -->
+    <h4>1.3 let, in another block, IS allowed</h4>
+    <p id="demo"></p>
+    <script>
+        let z = "jigisha";
+        {
+            let z = 5;
+        }
+        {
+            let z = 55;
+        }
+        document.getElementById("demo").innerHTML = z;
+    </script>
+
+    <h3>2. Let Hosting</h3>
+
+    <h4>2.1 var are hoisted</h4>
+    <!-- var are hoisted to the top and can be initialized at any time. -->
+    <p id="host"></p>
+    <script>
+        carName = "Verna";
+        document.getElementById("host").innerHTML = carName;
+        var carname;
+    </script>
+
+    <h4>2.2 let are hoisted</h4>
+    <!-- Using a let variable before it is declared will result in a ReferenceError: -->
+    <p id="host2"></p>
+    <script>
+        try {
+            carName = "verna";
+            let carName = "swift";
+        }
+        catch (err) {
+            document.getElementById("host2").innerHTML = err;
+        }
+    </script>
+    <hr />
+    <h2 style="color: #0077ff"> JS Const</h2>
+    <hr />
+
+    <h3>1. Constant Arrays</h3>
+    <!-- You can change the elements of a constant array: -->
+    <p id="cons1"></p>
+    <script>
+        // create an array 
+        const car =["verna","BMW","limousine"];
+        // Change an element
+        car[0]="Fortuner";
+        // Add an element
+        car.push("audi");
+        // Display the array;
+        document.getElementById("cons1").innerHTML = car;
+    </script>
+</body>
+
+</html>
