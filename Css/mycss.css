@@ -1,0 +1,55 @@
+body{
+    background-color: #eee;
+}
+.title{
+    text-align: center;
+}
+/* -------- Wheel css start ----------*/
+.wheel{
+    height: 200px;
+    width: 200px;
+    border: 40px solid #000;
+    border-radius: 100%;
+    margin: 50px auto;
+    position: relative;
+   /* // transition: transform 5s ease-in-out; */
+    animation: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;
+}
+.line1,.line2,.line3,.line4,.line5,.line6 {
+    height: 100%;
+    width: 10px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: 0 auto;
+}
+.line2{
+    rotate: 90deg;
+}
+.line3{
+    rotate: 45deg;
+}
+.line4{
+    rotate: -45deg;
+}
+.line5{
+    rotate: 90deg;
+}
+.line6{
+    rotate: 90deg;
+}
+
+/* @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  } */
+/*   
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  } */
+
+/* -------- Wheel css End ----------*/
