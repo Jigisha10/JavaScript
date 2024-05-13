@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>If Else If Conditions</h3>
+    <script>
+        var time = "11";
+        if(time > 1 && time < 11){
+            document.write("Good Morning!");
+        }else if(time > 11 && time < 15){
+            document.write("Good After Noon!");
+        }else if(time > 15 && time < 20){
+            document.write("Good Evening");
+        }else{
+            document.write("Good Night");
+        }
+        document.write("<br/>");
+    </script>
+    <h3>Ternary Operator</h3>
+    <script>
+         var age=22;
+         var drive;
+         if(age >= 18){
+            drive="Yes Drive";
+         }else{
+            drive="No Drive";
+         }
+         document.write(drive);
+         document.write("<br/>");
+        //  short Example
+        var drive = age>=18 ? 'Yes Drive' : 'No Drive';
+        document.write(drive);
+    </script>
+
+    <h3>Switch Case</h3>
+    <!-- Switch Case -->
+    <script>
+        var month=10;
+        switch (month){
+            case(1):document.write("January");
+            break;
+            case(2):document.write("February")
+            break;
+            case(3):document.write("March")
+            break;
+            case(4):document.write("April")
+            break;
+            case(5):document.write("May")
+            break;
+            case(6):document.write("June")
+            break;
+            case(7):document.write("July")
+            break;
+            case(8):document.write("August")
+            break;
+            case(9):document.write("September")
+            break;
+            case(10):document.write("October")
+            break;
+            case(11):document.write("November")
+            break;
+            case(12):document.write("December")
+            break;
+            default:document.write("Please Enter Valid Months Number");
+        };
+        document.write("<br/>");
+    </script>
+    <!-- switch comparison Operator use -->
+    <script>
+        var age = 15;
+        switch (true){
+            case(age >=18 && age <=40):document.write("Yes Drive")
+            break;
+            default:document.write("Not Drive");
+        }
+    </script>
+    <h3>Alert Box</h3>
+    <!-- Alert Box -->
+    <script>
+        //window.alert("jigisha");
+       // alert("Hello Everyone");
+        var a = 20;
+        var b = 30;
+        if(a > b){
+            alert("A is Graterthan B");
+        }else{
+            alert("B is Graterthan A");
+        }
+    </script>
+    <h3>Confirm Box</h3>
+    <script>
+        var a= confirm("Do you like this website?");
+        //alert(a);
+        if(a){
+            alert("Thank you");
+        }else{
+            alert("It is ok")
+        }
+    </script>
+    <h3>Promt box</h3>
+    <script>
+        var a=prompt("Enter Your Month Number");
+       // document.write("welcome "+ a);
+        // <!-- promt switch conditions use -->
+        switch(true){
+            case(a==1):document.write("January");
+            break;
+            case(a==2):document.write("February");
+            break;
+            case(a==3):document.write("March");
+            break;
+            case(a==4):document.write("April");
+            break;
+            case(a==5):document.write("May");
+            break;
+            case(a==6):document.write("June");
+            break;
+            case(a==7):document.write("July");
+            break;
+            case(a==8):document.write("August");
+            break;
+            case(a==9):document.write("September");
+            break;
+            case(a==10):document.write("Octomber");
+            break;
+            case(a==11):document.write("November");
+            break;
+            case(a==12):document.write("December");
+            break;
+            default:document.write("Please Enter a Valid Month")
+        }
+        document.write("<br/>");
+    </script>
+    <h3>Functions Use</h3>
+    <!-- function use -->
+    <script>
+        function myIntro(){
+            document.write("<br/>");
+            document.write("I am jigisha");
+            document.write("<br/>");
+            document.write("Hello");
+            document.write("<br/>");
+            document.write("Bye");
+        }
+        myIntro();
+    </script>
+    
+</body>
+</html>
