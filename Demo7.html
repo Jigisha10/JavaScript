@@ -148,6 +148,47 @@
         }
         myIntro();
     </script>
-    
+    <h3>Functions With Parameters</h3>
+    <!-- functions with parameters -->
+    <script>
+        function fullName(fname="Sonal",lname="Ahir"){
+            document.write(fname + " " + lname + "<br/>")
+        };
+        fullName("Jigisha", "Ahir"); 
+        fullName("Sonal", "Ahir"); 
+    </script>
+    <!-- second example -->
+    <script>
+        function sum(a,b){
+            document.write(a+b);
+        }
+        sum(20,30);
+    </script>
+    <h3>Functions with Return value</h3>
+    <!-- Functions with Return value -->
+    <script>
+        function fullName(fname,lname){
+            var a = 'Hello'+" " + fname + '-' + lname + '<br>';
+            return a;
+        }
+        var b = fullName("Jigisha", "Ahir");
+        document.write(b)
+    </script>
+    <!-- function return second example -->
+    <script>
+        function sum(maths,physics,chemestry,hindi,english,){
+            var a = maths + physics + chemestry + hindi + english;
+            return a;
+        }
+        var b = sum(50,60,70,80,75);
+        document.write("Marks Obtain - " + b + "<br>");
+
+        function percentage(totalmarks){
+            var c = totalmarks/500*100;
+            return c;
+        }
+        var d = percentage(b);
+        document.write("percentage - " + d + '%' );
+    </script>
 </body>
 </html>
