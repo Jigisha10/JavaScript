@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn, .win-btn {
+            background-color: #d14848;
+            border: 1px solid #d14848;
+            height: 50px;
+            width: 180px;
+            margin: 20px 0 20px 25px;
+            cursor: pointer;
+            font-size: 17px;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .formbox {
+            background-color: #fff;
+            padding: 25px;
+            width: 500px;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .formbox input {
+            border: 1px solid #ddd;
+            height: 45px;
+            width: 93%;
+            margin-bottom: 10px;
+            padding: 0 15px;
+            border-radius: 3px;
+        }
+
+        .formbox label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .d-flex{
+            display: flex;
+            justify-content: center;
+        }
+        .formbox h3{
+            color: #d14848;
+            text-align: center;
+            font-size: 22px;
+        }
+        .win-btn{
+            background-color: #3F51B5;
+            border-color: #3F51B5;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="background-color: #eee;">
+    <h2 style="text-align: center;margin-top: 25px;">Mouse Event</h2>
+    <!-- Clickevent -->
+    <button type="button" id="btn" onclick="mydemo()">Button Click</button>
+    <!-- Double Clickevent -->
+    <button type="button" id="btn" ondblclick="mydemo()">Button Doble Click</button>
+    <!-- Right Clickevent -->
+    <button type="button" id="btn" oncontextmenu="mydemo()">Button Right Click</button>
+    <!-- Mouse hover -->
+    <button type="button" id="btn" onmouseover="mydemo()">Button Hover</button>
+    <!-- Mouse Out -->
+    <button type="button" id="btn" onmouseout="mydemo()">Button Out</button>
+    <!-- MouseDown -->
+    <button type="button" id="btn" onmousedown="mydemo()">Button Down</button>
+    <!-- Mouseup -->
+    <button type="button" id="btn" onmouseup="mydemo()">Button up</button>
+    <script>
+        function mydemo() {
+            alert('Event Activated');
+        }
+    </script>
+    <h2 style="text-align: center;margin: 25px 0;">Keyboard Event</h2>
+    <div class="d-flex">
+    <div id="form" class="formbox">
+        <h3>Enter value</h3>
+        <!-- Onkeydown -->
+        <label>Onkeydown</label>
+        <input type="text" onkeydown="alert(this.value);" />
+        <!-- Onkeyup -->
+        <label>Onkeyup</label>
+        <input type="text" onkeyup="alert(this.value);" />
+        <!-- OnKeypress -->
+        <label>OnKeypress</label>
+        <input type="text" onkeypress="alert(this.value);" />
+    </div>
+
+    <!-- Second example -->
+
+    <div id="form2" class="formbox">
+        <h3>Background color change</h3>
+        <!-- Onkeydown -->
+        <label>Onkeydown</label>
+        <input type="text" onkeydown="document.getElementById('form2').style.backgroundColor=this.value;" />
+        <!-- Onkeyup -->
+        <label>Onkeyup</label>
+        <input type="text" onkeyup="document.getElementById('form2').style.backgroundColor=this.value;" />
+        <!-- OnKeypress -->
+        <label>OnKeypress</label>
+        <input type="text" onkeypress="document.getElementById('form2').style.backgroundColor=this.value;" />
+    </div>
+</div>
+    <!-- window Event -->
+    <h2 style="text-align: center;margin: 25px 0;">Window Event</h2>
+    <div class="d-flex">
+        <button type="button" onclick="openWindow()" class="win-btn">Window Open</button>
+        <button type="button" onclick="closeWindow()" class="win-btn">Window Close</button>
+    </div>
+    <script>
+        function openWindow(){
+            window.open("https://google.com", "", "width=500px,height=500px,left=300,top=150"); // New window open
+            // window.open("https://google.com","_parent");  // as it is page window oepn 
+        }
+        function closeWindow(){
+            window.close();
+        }
+    </script>
+
+</body>
+
+</html>
