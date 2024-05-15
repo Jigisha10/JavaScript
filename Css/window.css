@@ -25,3 +25,42 @@ body{
 .textformat{
     text-align: justify;
 }
+
+
+/* --- AddEventListener Css start --- */
+
+#addevent {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin: 35px auto;
+}
+#addevent h2 {
+    background-color: #04625a;
+    display: block;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    margin-bottom: 0;
+    font-size: 20px;
+    text-align: center;
+}
+#addevent img {
+    height: 215px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    filter: grayscale(100%);
+}
+
+/* #addevent img:hover{
+    filter: grayscale(0%);
+} */
+
+/* --- AddEventListener Css End --- */
+
+/* ================ Scroll Event Css Start ================ */
+#text{
+    width:70%;
+    margin: 0 auto;
+}
+/* ================ Scroll Event Css End ================ */

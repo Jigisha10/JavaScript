@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/window.css"/>
+</head>
+<body>
+    <h2 style="text-align: center; margin-top: 45px;margin-bottom: 0;">AddEventLister</h2>
+    <div id="addevent">
+        <div id="block1">
+            <h2>Cold Drink</h2>
+            <img src="image/drink.jpg" id="img1"/>
+        </div>
+        <div id="block2">
+            <h2>Enjoy Drink</h2>
+            <img src="image/drink2.jpg" id="img2"/>
+        </div>
+    </div>
+ 
+    <hr/>
+    <div id="text">
+        <h2>Scroll Event </h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>Scroll Event </h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>Scroll Event </h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>Scroll Event </h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>Scroll Event </h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+    </div>
+    <script src="js/AddEventLister.js"></script>
+    <script>
+        //====== multiple example use ===
+
+        // window.addEventListener("scroll",function(){   
+        //     console.log("Scrolling....");     
+        // });
+
+        //  window.addEventListener("wheel",function(event){
+        //     if(event.deltaY < 0){
+        //         console.log("Scrolling Up...");
+        //     }else if(event.deltaY > 0){
+        //         console.log("Scrolling Down...");
+        //     }
+        //  });   
+
+            window.addEventListener('scroll', function(){
+                if(window.pageYOffset > 400){
+                    document.body.style.background = "black";
+                    document.body.style.color = "white";
+                }else{
+                    document.body.style.background = "white";
+                    document.body.style.color = "black";
+                }
+            });
+    </script>
+    <h2>Loops</h2>
+    <h4>For loop</h3>
+    <script>
+        // for(let i = 1; i <= 5; i++){
+        //     document.write(i + "<br>");
+        // }
+        // document.write(Done);
+        for(let a = 1; a<=10; a++){
+            if(a % 2 !== 0)
+            document.write(a + "<br/>")
+        }
+    </script>
+
+    <h4>whie Loop</h4>
+    <script>
+        let i =1;
+        while(i<=5){
+            // console.log(i);
+            document.write(i + "&nbsp;");
+             i++;
+        }
+    </script>
+      <h4>do whie Loop</h4>
+        <script>
+            let a = 10;
+            do{
+                document.write(a);
+                i++;
+            }while(i <= 5);
+        </script>
+        <script>
+            let password;
+            do{
+                password=prompt("what is the passcode ?");
+            }while(password !== 'jigisha' );
+        </script>
+        <h2>Break & Continue</h2>
+        <script>
+            for(let counter = 1; counter <= 10; counter ++){
+                if(counter ==5){
+                    break;
+                }
+                document.write(counter + "<br/>");
+            }
+        </script>
+</body>
+</html>
