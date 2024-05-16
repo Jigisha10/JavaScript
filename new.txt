@@ -1,0 +1,28 @@
+Scenario: You want to create a simple shopping list using JavaScript.
+
+Instructions:
+
+Create three variables using let or const:
+
+item1: Store the name of your first shopping list item (e.g., "Milk").
+price1: Store the price of the first item as a number (e.g., 2.50).
+numberOfItems: Store the total number of items on your list as a number (initially set to 1).
+Optional: Add more items to your list using additional variables like item2, price2, etc., following the same pattern.
+
+Use the console.log function to display the following information on the browser console:
+
+The name and price of the first item (e.g., "Milk: $2.50").
+The total number of items on the list (e.g., "Total Items: 1").
+
+Bonus:
+Modify the code to allow adding more items dynamically (e.g., using a loop).
+Display the total cost of all items on the list.
+
+Tips:
+Use comments to explain what your code is doing.
+Experiment with different data types (strings, numbers) for your items and prices.
+Use arithmetic operators like + and * to calculate the total cost (bonus).
+
+Remember:
+Use proper indentation to make your code readable.
+Test your code in your browser's developer console.

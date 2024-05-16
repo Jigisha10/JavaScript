@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="js/myscript.js"></script> -->
+</head>
+
+<body>
+    <h3>Loop</h3>
+    <script>
+        i = 5;
+        for (; i <= 10; i++) {
+            console.log(i);
+        }
+        console.log(i);
+    </script>
+
+    <h3>Array</h3>
+    <!-- Array use -->
+    <script>
+        let subject = ["Maths", "physics", "Chemestry"];
+        document.write(subject);
+    </script>
+    <h3>Debugger</h3>
+    <!-- 
+    <button id="changetext">Click Me</button>
+    <span id="spntext"></span> -->
+
+    <h4>Error Method</h4>
+    <script>
+        let software = ["Photoshop", "Illustrator", "corel", "In design"];
+        document.write(software[3]);
+        console.log(software[2]);   // corel print karega
+        console.log("total lenght " + software.length);   // total lenght
+        software.push("visual");    // add value in last
+        software.unshift("canva");  // first add value
+        software.pop();              // last value remove  
+        software.shift();            // first value remove  
+        software.splice(1, 2);       // bich me se elements remove
+        console.log(software);   
+    </script>
+    <script>
+        var software1 = ["Photoshop", "Illustrator", "corel", "In design"];
+        var position = software1.indexOf("corel");           // position check 
+        console.log(position);
+    </script>
+    <script>
+        let text="My name is jigisha"; 
+        let wordarray = text.split(' ');  // perticular array create
+        console.log(wordarray);
+    </script>
+</body>
+
+</html>
