@@ -29,7 +29,7 @@
     <button id="changetext">Click Me</button>
     <span id="spntext"></span> -->
 
-    <h4>Error Method</h4>
+    <h4>Array Method</h4>
     <script>
         let software = ["Photoshop", "Illustrator", "corel", "In design"];
         document.write(software[3]);
@@ -40,7 +40,13 @@
         software.pop();              // last value remove  
         software.shift();            // first value remove  
         software.splice(1, 2);       // bich me se elements remove
+        
         console.log(software);   
+    </script>
+    <script>
+        let softWare = ["Photoshop", "Illustrator", "corel", "In design"];
+        let  r= softWare.pop();
+        document.write(softWare +" "+ r) // return add karne ke liye
     </script>
     <script>
         var software1 = ["Photoshop", "Illustrator", "corel", "In design"];
@@ -51,6 +57,59 @@
         let text="My name is jigisha"; 
         let wordarray = text.split(' ');  // perticular array create
         console.log(wordarray);
+    </script>
+    <script>
+        let software2=["Photoshop", "Illustrator", "corel", "In design"];
+        let textarray=software2.join(" - ");  // array line ko jodne ke liye
+        console.log(textarray);
+    </script>
+    <script>
+        let software3 = ["Photoshop", "Illustrator", "corel", "In design"];
+        let software4 = ["Canva", "php"];
+        let newsofware=software3.concat(software4);  // new array ko one line me jodne ke liye
+        console.log(newsofware);
+    </script>
+    <script>
+        let newarray=[
+            ["jigisha" ,"sonal"],["jemini","chetali"]    // Multidimensional array
+        ];
+        console.log(newarray[0][1]);
+    </script>
+
+    <h3>Sort</h3>
+    <script>
+        let num = [15,225,70,33, 8 ,5, 550, 15,17];
+        let compare=(a,b)=>{   
+            return b - a;  // assending oreder;
+        };
+            num.sort(compare);
+            //numr.reverse();
+        console.log(num);
+
+        let string=["jigisha","sonal","jemini","chetali"];
+       // string.reverse();
+        string.sort();
+        console.log(string);
+    </script>
+    <script>
+        // splice and slice
+            let number=[1,5,6, 225, 39, 40, 45];
+              // number.splice(1,3, 110,115,116);
+          //  let deletedvalues = number.splice(0,3, 110,115,116);
+           console.log( number); 
+           // console.log(deletedvalues); 
+        let newNum = number.slice(2,3);
+        console.log(newNum); 
+    </script>
+    <h3>Loops with array</h3>
+    <script>
+        let a=[3,4,54,6];
+        // for(let i=0; i<a.length;i++){
+        //     document.write(a[i]);
+        // }
+        a.forEach((element)=>{
+            document.write(element*element + "<br/>");
+        });
     </script>
 </body>
 

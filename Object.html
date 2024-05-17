@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Object</h3>
+    <script>
+        // OBJECT 
+        let person = {
+            firstName:"jigisha",
+            lastName:"Ahir",
+            age:26
+        };
+        document.write(person.age);
+        // person.firstName="sonal";
+        person.email="jigisha@gmail.com";      // property add karne liye 
+        delete person.lastName;              // delete karne ke liye
+        // console.log(person);
+        console.log("lastName" in person);    // condition check 
+    </script>
+    <h3>object use for in loop</h3>
+    <script>
+        let fullName={
+            firstName:"Sonal",
+            lastName:"ahir",
+            age:"26"
+        };
+        for(let key in fullName){
+            console.log(key + ":" + fullName[key]);   //object use for in loop
+        };
+    </script>
+    <script>
+        let Name={
+            firstName:"jigisha",
+            lastName:"Ahir",
+            age:26,
+            subject: ["Maths","English","Hindi"],
+            living:{
+                'city':'chikhli',
+                'country' : 'India'
+            },
+            // salary:function(){
+            //     return 2000;
+            // }
+            fullName: function(){
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        console.log("Subject : " +  Name.subject[2]);
+        console.log("City : " + Name.living.city);
+       // console.log(Name.salary());
+       console.log(Name.fullName());
+    </script>
+</body>
+</html>
