@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4 id="header">DOM</h4>
+    <h2 id="header-title">Husain Sir</h2>
+    <p id="tagline">Computer Educator</p>
+    <ul class="list-name">
+        <li>Graphics</li>
+        <li>Animation</li>
+        <li>Motion Graphics</li>
+        <li>Digital Marketing</li>
+    </ul>
+
+    <script>
+        var headerTitle=document.getElementById("header-title");
+        headerTitle.innerHTML="<h1> Hello </h1>";
+
+        document.getElementById("tagline").innerText="computer Cource";
+        //document.getElementById("header").style.borderBottom="5px solid #000"
+
+        var item=document.getElementsByClassName("list-name");
+        item[1].textContent="gra";
+        item[2].textContent="Photoshop";
+        item[3].textContent="figma";
+        item[2].style.backgroundColor="red"
+
+
+
+
+    </script>
+
+</body>
+</html>
