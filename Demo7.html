@@ -69,9 +69,32 @@
         };
         document.write("<br/>");
     </script>
+    <div id="time"></div>
+    <script>
+        let time = 10;
+        switch(true){
+            case(time > 1 && time < 11):document.getElementById('time').innerHTML= "Good morning"
+            break;
+            case(time > 11 && time < 15):document.getElementById('time').innerHTML= "Good Afternoon"
+            break;
+            case(time > 15 && time < 20):document.getElementById('time').innerHTML= "Good Evening"
+            break;
+            default:document.write("Good Night")
+        };
+        switch(true){
+            case(time > 1 && time < 11):document.write("Good morning")
+            break;
+            case(time > 11 && time < 15):document.getElementById('time').innerHTML= "Good Afternoon"
+            break;
+            case(time > 15 && time < 20):document.getElementById('time').innerHTML= "Good Evening"
+            break;
+            default:document.write("Good Night")
+        };
+
+    </script>
     <!-- switch comparison Operator use -->
     <script>
-        var age = 15;
+        var age = 22;
         switch (true){
             case(age >=18 && age <=40):document.write("Yes Drive")
             break;

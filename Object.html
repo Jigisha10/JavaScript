@@ -7,6 +7,7 @@
 </head>
 <body>
     <h3>Object</h3>
+    <div id="test"></div>
     <script>
         // OBJECT 
         let person = {
@@ -14,6 +15,9 @@
             lastName:"Ahir",
             age:26
         };
+        let arr = [1, 2, 3, 4];
+        document.getElementById('test').innerHTML = arr;
+        console.log(person);
         document.write(person.age);
         // person.firstName="sonal";
         person.email="jigisha@gmail.com";      // property add karne liye 
@@ -21,6 +25,12 @@
         // console.log(person);
         console.log("lastName" in person);    // condition check 
     </script>
+
+
+
+
+
+
     <h3>object use for in loop</h3>
     <script>
         let fullName={
