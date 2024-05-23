@@ -13,18 +13,18 @@
     <script>
         let numberArray = [5, 15, 20, 25, 10, 30];
         function calculateAverage(number) {
-            let sum = 10;
-            for (let i = 0; i < number.length; i++ ){
-                sum += number[i]; 
+            let sum = 0;
+            for (let i = 0; i < number.length; i++) {
+                sum += number[i];
             }
             return sum / number.length;
         }
         let average = calculateAverage(numberArray);
-        document.write("<b>Average:</b> ", average);
+        document.write("<b>Average:</b>", average + "<br/><br/>");
     </script>
 
     <!-- practice -->
-       <script>
+    <script>
         let person = ["jigisha", "Sonal"];
         // function mydetail(detail){
         //   i=10;
@@ -34,9 +34,23 @@
         //   return i = detail.length;
         // };
         // let name = mydetail(person);
+        for (i = 0; i < 10; i++) {
+            console.log("jigisha");
+            document.write(person, "<br/>");
+        }
         document.write("<br/>");
-        document.write("<br/>");
-        document.write("Name : ", person[0] + name);
+        document.write("Name : ", person[0] + name + "<br/> <br/>");
+    </script>
+    <script>
+        let subject = ["Maths", "English", "Hindi"];
+        function mysubject() {
+            for (let i = 0; i < 5; i++) {
+                document.write(subject[0], "<br/>");
+            }
+            return subject;
+        }
+        mysubject();
     </script>
 </body>
+
 </html>

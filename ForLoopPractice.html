@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 100,200,300,400,500 up to 1000 -->
+    
+    <script>
+        for (let i = 100; i <= 1000; i++) {
+            if (i % 100 === 0) {
+                document.write(i + "<br/>");
+            }
+        }
+        document.write("<br/>");
+        
+        // 1000, 999,800 up to 100 reverce 
+
+        for (let i = 1000; i >= 100; i--) {
+            if (i % 100 === 0) {
+                document.write(i + "<br/>");
+            }
+        }
+    </script>
+    <br />
+    <!-- <script>
+        for (let i = 100; i <= 1000; i += 100) {
+            document.write(i);
+        }
+    </script> -->
+
+    <br />
+    <script>
+        // only forloop
+        a = 90, 60, 55, 95;
+        for (let i = 55; i < 90; i++) {
+            document.write(i, ",&nbsp;");
+            console.log(i);
+        }
+    </script>
+    <script>
+        // calculate total array
+        let numarry = [30, 40, 50, 60, 70];
+        let total = 0;
+        for (let i = 0; i < numarry.length; i++) {
+            total += numarry[i];
+        }
+        document.write("<br/><br/> Total : " + total + "<br/>")
+    </script>
+    <script>
+        let value = [25, 60, 70, 64, 80];
+        let maximum = "";
+
+        for (let i = 0; i < value.length; i++) {
+            if (value[i] > maximum) {
+                maximum = value[i];
+            }
+        }
+        document.write("Max :" + maximum + "<br/>");
+    </script>
+    <br />
+    <!-- decrement example -->
+    <script>
+        a = 50, 40, 30, 20, 10;
+        for (let i = 50; i > 10; i--) {
+            document.write(i + " ");
+        }
+    </script>
+    <br />
+    <br />
+    <script>
+        let marks = [45, 10, 30, 35, 80, 60, 78];
+        let result = "";
+        for (let i = 0; i < marks.length; i++) {
+            if (marks[i] >= 35) {
+                result += "Student " + (i + 1) + ": PASS" + "<br/>";
+            }
+            else {
+                result += "Student " + (i + 1) + ": FAIL" + "<br/>";
+            }
+        }
+        document.write(result);
+    </script>
+
+</body>
+
+</html>

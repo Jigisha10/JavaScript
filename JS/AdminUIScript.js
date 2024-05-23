@@ -78,7 +78,6 @@ function populateTable(data) {
         alert('Edit user with ID ' + userId);
         // Implement your edit functionality here
     }
-  
 
 getfacts();
 
