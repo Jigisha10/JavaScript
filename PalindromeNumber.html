@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Palindrome</h1>
+    <!-- Palindrome Number -->
+    <script>
+        let palindrome = "1441";
+        let str = "";
+        for (let i = palindrome.length - 1; i >= 0; i--) {
+            str += palindrome[i];
+        }
+        if (str == palindrome) {
+            document.write("Palindrome number :" + palindrome );
+        } 
+        else
+        {
+            document.write("Not palindrome number" + palindrome);
+        }
+    </script>
+</body>
+
+</html>
