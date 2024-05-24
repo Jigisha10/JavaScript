@@ -9,7 +9,7 @@
 
 <body>
     <!-- 100,200,300,400,500 up to 1000 -->
-    
+
     <script>
         for (let i = 100; i <= 1000; i++) {
             if (i % 100 === 0) {
@@ -17,8 +17,8 @@
             }
         }
         document.write("<br/>");
-        
-        // 1000, 999,800 up to 100 reverce 
+
+        // 1000, 999,800 up to 100 reverce number
 
         for (let i = 1000; i >= 100; i--) {
             if (i % 100 === 0) {
@@ -27,19 +27,35 @@
         }
     </script>
     <br />
-    <!-- <script>
-        for (let i = 100; i <= 1000; i += 100) {
-            document.write(i);
-        }
-    </script> -->
 
+    <script>
+        // Reverce name print
+        let name = "Jigisha";
+        let reverceName = "";
+        for (let i = name.length - 1; i >= 0; i--) {
+            reverceName += name[i];
+        }
+        document.write("<b>Jigisha Reverce Name :</b> " + reverceName);
+        //console.log("Reverce Name: " + reverceName);
+    </script>
+    <br/>
+    <script>
+        let nameArray = ["Jigisha"];
+        let length = "";
+        for (let i = 0; i < 7; i++) 
+        {
+            length ++;
+        } 
+        document.write("<b>Jigisha Name Length :</b>" + length);
+        document.write("<br/>");
+    </script>
     <br />
     <script>
         // only forloop
-        a = 90, 60, 55, 95;
+
         for (let i = 55; i < 90; i++) {
             document.write(i, ",&nbsp;");
-            console.log(i);
+            // console.log(i);
         }
     </script>
     <script>
