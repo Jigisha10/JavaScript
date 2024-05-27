@@ -26,3 +26,24 @@ Use arithmetic operators like + and * to calculate the total cost (bonus).
 Remember:
 Use proper indentation to make your code readable.
 Test your code in your browser's developer console.
+
+
+====================================================================
+
+1. Vowel Counter:
+
+Write a function that takes a string as input and returns the number of vowels (a, e, i, o, u) present in the string (case-insensitive).
+
+2. Reverse Words:
+
+Write a function that takes a string as input and returns a new string with the order of the words reversed.
+
+3. Palindrome Checker:
+
+Write a function that takes a string as input and returns true if it's a palindrome (reads the same backward as forward), ignoring non-alphanumeric characters, and case-insensitive.
+
+4. Most Frequent Character:
+
+Write a function that takes a string as input and returns the character that appears the most frequently in the string.
+
+5.  Function to calculate the string length without using length, for...of loops, or recursion in JavaScript
