@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        .conatiner {
+            width: 1460px;
+            margin: 25px auto;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 20px 25px;
+        }
+
+        .inputbox {
+            margin-bottom: 10px;
+            height: 35px;
+            width: 220px;
+            padding: 0 8px;
+            outline: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button {
+            height: 37px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            width: 115px;
+        }
+
+        #output {
+            color: #2626fc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <h2>1. Vowel Counter:</h2>
+
+        <!-- HTML Vowel Counter code start-->
+        <input type="text" id="inputString" class="inputbox" placeholder="Enter a string">
+        <button id="countButton">Count Vowels</button>
+        <div id="output"></div>
+        <!-- HTML code end-->
+
+        <!-- vowel counter script-->
+        <script>
+            document.getElementById('countButton').addEventListener('click', function () {
+                const inputString = document.getElementById('inputString').value;
+
+                // Function to count vowels in a string
+                function countVowels(str) {
+                    const vowels = 'aeiou';
+                    let count = 0;
+
+                    // Convert input string to lowercase for case-insensitive comparison
+                    const lowerCaseString = str.toLowerCase();  // toLowerCase Method use
+
+                    for (let i = 0; i < lowerCaseString.length; i++) {
+                        if (vowels.includes(lowerCaseString[i]))  // include check the string or element
+                        {
+                            count++;
+                        }
+                    }
+                    return count;
+                }
+                const vowelCount = countVowels(inputString);
+
+                document.getElementById('output').innerHTML = '<b>Number of vowels:</b> ' + vowelCount;
+            });
+        </script>
+        <!-- vowel counter script end-->
+
+        <h2>2. Reverse Words:</h2>
+
+        <!-- Reverse Words script-->
+        <script>
+            function reverseWords(inputString) {
+                // Split the input string into an array of words
+                const wordsArray = inputString.split(' ');
+
+                // Reverse the array of words
+                const reversedArray = wordsArray.reverse();
+
+                // Join the reversed array back into a single string
+                const reversedString = reversedArray.join(' ');
+
+                // Return the reversed string
+                return reversedString;
+            }
+            const originalString = "Hello world";
+            const reversedString = reverseWords(originalString);
+            document.write("<b>Reverse Words : </b>", reversedString);
+        </script>
+
+        <h2>3. Palindrome Checker</h2>
+        <!-- palindrome script -->
+        <script>
+            function isPalindrome(string) {
+                // Remove non-alphanumeric characters and convert to lowercase
+                const convertString = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
+
+                const reversedString = convertString.split('').reverse().join('');
+                // return convertString === reversedString;
+
+                if (convertString === reversedString) {
+                    document.write("<b>Palindrom string : </b>" + palindromeString);
+                }
+                else {
+                    document.write("<b>Not Palindrom string : </b>" + palindromeString);
+                }
+                return palindromeString;
+            }
+            const palindromeString = "Madam";
+
+            isPalindrome(palindromeString);
+            // document.write(isPalindrome(palindromeString));
+        </script>
+        <hr />
+        <h2>4. Most Frequent Character :</h2>
+        <!-- maximum occuring characyer -->
+        <script>
+            function mostFrequentChar(inputstr) {
+                const teststring = "hello"
+                const charCount = {}
+                for (let i = 0; i < inputstr.length; i++) {
+                    const char = inputstr[i];
+                    
+                }
+
+            }
+        </script>
+       
+    </div>
+</body>
+
+</html>
