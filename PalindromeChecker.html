@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/inputstring.css" />
+</head>
+
+<body>
+    <div class="conatiner">
+        <h2>3. Palindrome Checker</h2>
+        <!-- palindrome script -->
+        <script>
+            function isPalindrome(string) {
+                let stringValue = "";
+
+                // Remove non-alphanumeric characters and convert to lowercase
+                let cleanedString = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
+
+                for (let i = cleanedString.length - 1; i >= 0; i--) {
+                    stringValue += cleanedString[i];
+                }
+                return stringValue === cleanedString;
+            }
+            const palindromeString = "Madam";
+            document.write("<b> Palindrom String: </b>", isPalindrome(palindromeString));
+        </script>
+
+        <!-- <script>
+        function isPalindrome(string) {
+            let cleanedString = "";
+            let stringValue = "";
+            for (let i = 0; i < string.length; i++) {
+                let char = string[i];
+                if (isAlphaNumeric(char)) {
+                    cleanedString += char.toLowerCase();
+                }
+            }
+
+            for (let i = cleanedString.length - 1; i >= 0; i--) {
+                stringValue += cleanedString[i];
+            }
+            if (stringValue === cleanedString) {
+                return true;
+            } else {
+                return false;
+            }
+            return stringValue;
+        }
+        function isAlphaNumeric(char) {
+            let code = char.charCodeAt(0);
+            return (code >= 48 && code <= 57) || // numeric (0-9)
+                (code >= 65 && code <= 90) || // upper alpha (A-Z)
+                (code >= 97 && code <= 122);  // lower alpha (a-z)
+        }
+        const palindromeString = "Madam";
+        document.write(isPalindrome(palindromeString));
+    </script> -->
+    </div>
+</body>
+
+</html>

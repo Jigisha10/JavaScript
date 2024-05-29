@@ -1,0 +1,38 @@
+body {
+    background-color: #eee;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.conatiner {
+    width: 1460px;
+    margin: 25px auto;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px 25px;
+}
+
+.inputbox {
+    margin-bottom: 10px;
+    height: 35px;
+    width: 220px;
+    padding: 0 8px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button {
+    height: 37px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 115px;
+}
+
+#output {
+    color: #2626fc;
+}

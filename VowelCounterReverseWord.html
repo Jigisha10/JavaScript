@@ -5,48 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background-color: #eee;
-        }
-
-        h2 {
-            font-size: 20px;
-        }
-
-        .conatiner {
-            width: 1460px;
-            margin: 25px auto;
-            background-color: #fff;
-            border-radius: 6px;
-            padding: 20px 25px;
-        }
-
-        .inputbox {
-            margin-bottom: 10px;
-            height: 35px;
-            width: 220px;
-            padding: 0 8px;
-            outline: none;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-
-        button {
-            height: 37px;
-            cursor: pointer;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            width: 115px;
-        }
-
-        #output {
-            color: #2626fc;
-        }
-    </style>
+    <link rel="stylesheet" href="Css/inputstring.css"/>
 </head>
-
 <body>
     <div class="conatiner">
         <h2>1. Vowel Counter:</h2>
@@ -85,10 +45,50 @@
         </script>
         <!-- vowel counter script end-->
 
+
+        
         <h2>2. Reverse Words:</h2>
 
         <!-- Reverse Words script-->
         <script>
+            function reverseword(string) {
+                let length = string.length;
+                let reversedString = "";
+                let word = "";
+                for (let i = length - 1; i >= 0; i--) {
+                    let char = string[i];
+                    if (char === ' ') {
+                        if (word) {
+                            //Add the word to the reversedstring
+                            for (let j = word.length - 1; j >= 0; j--) {
+                                reversedString += word[j];
+                            }
+                            reversedString += " ";
+                            word = "";
+                        }
+                    } else {
+                        word += char;
+                    }
+                }
+                // Append the last word if there is any
+                if (word) {
+                    for (let j = word.length - 1; j >= 0; j--) {
+                        reversedString += word[j];
+                    }
+                }
+                // Remove the trailing space if there is any
+                if (reversedString[reversedString.length - 1] === " ") {
+                    reversedString = reversedString.slice(0, -1);
+                }
+                return reversedString;
+            }
+            let string = "Jigisha Ahir";
+            document.write(reverseword(string));
+
+        </script>
+
+        <!-- Reverse Words method used script-->
+        <!-- <script>
             function reverseWords(inputString) {
                 // Split the input string into an array of words
                 const wordsArray = inputString.split(' ');
@@ -105,46 +105,8 @@
             const originalString = "Hello world";
             const reversedString = reverseWords(originalString);
             document.write("<b>Reverse Words : </b>", reversedString);
-        </script>
+        </script> -->
 
-        <h2>3. Palindrome Checker</h2>
-        <!-- palindrome script -->
-        <script>
-            function isPalindrome(string) {
-                // Remove non-alphanumeric characters and convert to lowercase
-                const convertString = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
-
-                const reversedString = convertString.split('').reverse().join('');
-                // return convertString === reversedString;
-
-                if (convertString === reversedString) {
-                    document.write("<b>Palindrom string : </b>" + palindromeString);
-                }
-                else {
-                    document.write("<b>Not Palindrom string : </b>" + palindromeString);
-                }
-                return palindromeString;
-            }
-            const palindromeString = "Madam";
-
-            isPalindrome(palindromeString);
-            // document.write(isPalindrome(palindromeString));
-        </script>
-        <hr />
-        <h2>4. Most Frequent Character :</h2>
-        <!-- maximum occuring characyer -->
-        <script>
-            function mostFrequentChar(inputstr) {
-                const teststring = "hello"
-                const charCount = {}
-                for (let i = 0; i < inputstr.length; i++) {
-                    const char = inputstr[i];
-                    
-                }
-
-            }
-        </script>
-       
     </div>
 </body>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/inputstring.css" />
+</head>
+
+<body>
+    <div class="conatiner">
+        <h2>4. Most Frequent Character :</h2>
+        <!-- maximum occuring characyer -->
+        <script>
+            function mostFrequentChar(teststring) {
+                let charCount = {};
+                let maxChar = "";
+                let maxCount = 0;
+                let normalstr = teststring.replace(/[^a-z0-9]/gi, '').toLowerCase();
+                // input string to count occurrences of each character
+                for (let i = 0; i < normalstr.length; i++) {
+                    let char = normalstr[i];
+                    if (charCount[char]) {
+                        charCount[char]++;
+                    } else {
+                        charCount[char] = 1;
+                    }
+                }
+                // the charCount object to find the character with the maximum count
+                for (let char in charCount) {
+                    if (charCount[char] > maxCount) {
+                        maxCount = charCount[char];
+                        maxChar = char;
+                    }
+                }
+                return { character: maxChar, count: maxCount };
+            }
+            const teststring = "Hello";
+
+            let result = mostFrequentChar(teststring);
+            document.write("Character : " + result.character + " , " + "Count : " + result.count);
+        </script>
+    </div>
+</body>
+
+</html>
