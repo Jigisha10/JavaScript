@@ -28,6 +28,7 @@ function populateTable(data) {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.value = user.id;
+        checkbox.className = 'userCheckbox';
         cellCheckbox.appendChild(checkbox);
         row.appendChild(cellCheckbox);
 
@@ -50,17 +51,18 @@ function populateTable(data) {
         editIcon.className = 'editicon fa-solid fa-pen-to-square';
         editIcon.style.cursor = 'pointer';
         editIcon.title = 'Edit';
-        editIcon.onclick = ()=> {
-            editUser(user.id);
+        editIcon.onclick = () => {
+            openEditModal(user);
         };
+
         cellAction.appendChild(editIcon);
 
         // Delete Icon
         const deleteIcon = document.createElement('i');
-        deleteIcon.className = 'deleteicon fa-solid fa-trash'; 
-        deleteIcon.style.cursor = 'pointer' ;
+        deleteIcon.className = 'deleteicon fa-solid fa-trash';
+        deleteIcon.style.cursor = 'pointer';
         deleteIcon.title = 'Delete';
-        deleteIcon.onclick = ()=> {
+        deleteIcon.onclick = () => {
             deleteUser(user.id);
         }
         cellAction.appendChild(deleteIcon);
@@ -70,14 +72,61 @@ function populateTable(data) {
         tableBody.appendChild(row);
     });
 
-    // Edit Function
+}
+// Edit modal Function
+
+function openEditModal(user) {
+    //document.getElementById('userId').value = user.id;
+    document.getElementById('userName').value = user.name;
+    document.getElementById('userEmail').value = user.email;
+    document.getElementById('userRole').value = user.role;
+
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'block';
+}
+const span = document.getElementsByClassName('close')[0];
+span.onclick = function () {
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'none';
 }
 
-    // Delete Function
-    function editUser(userId) {
-        alert('Edit user with ID ' + userId);
-        // Implement your edit functionality here
+// Close the modal when the user clicks anywhere outside of the modal
+window.onclick = function (event) {
+    const modal = document.getElementById('editModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
     }
+}
+document.getElementById('editForm').onsubmit = function (event) {
+    event.preventDefault();
+    // const userId = document.getElementById('userId').value;
+    const userName = document.getElementById('userName').value;
+    const userEmail = document.getElementById('userEmail').value;
+    const userRole = document.getElementById('userRole').value;
+    //console.log('User ID:', userId);
+    console.log('User Name:', userName);
+    console.log('User Email:', userEmail);
+    console.log('User Role:', userRole);
+    // Perform the update operation (e.g., send data to the server)
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'none';
+};
+
+// Select All Checkbox
+
+document.getElementById('selectAll').addEventListener('change', function() {
+    const checkboxes = document.querySelectorAll('.userCheckbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = this.checked;
+    });
+});
+
+
+// Delete Function
+function editUser(userId) {
+    alert('Edit user with ID ' + userId);
+    // Implement your edit functionality here
+}
 
 getfacts();
 

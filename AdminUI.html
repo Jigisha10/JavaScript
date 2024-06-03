@@ -18,11 +18,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th></th>
+                        <th class="text-center"><input type="checkbox" id="selectAll"></th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Action</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody id="dataTable">
@@ -31,6 +31,34 @@
             </table>
         </div>
     </div>
+    <!-- Edit Modal Dailog -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Edit Modal</h2>
+            <span class="close">&times;</span>
+            <form id="editForm">
+                <input type="hidden" id="userId" class="minput" name="userId">
+                <div>
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" name="userName" class="minput" required>
+                </div>
+                <div>
+                    <label for="userEmail">Email:</label>
+                    <input type="email" id="userEmail" name="userEmail" class="minput" required>
+                </div>
+                <div>
+                    <label for="userRole">Role:</label>
+                    <input type="text" id="userRole" name="userRole" class="minput" required>
+                </div>
+                <div>
+                    <button type="submit" class="save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Edit Modal Dailog end-->
+
+
     <script src="Js/AdminUIScript.js"></script>
 </body>
 

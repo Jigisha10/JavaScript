@@ -82,7 +82,121 @@
         console.log(signedIn);
     </script>
 
+    <script>
+        // 3/06/2024
+        var thingOne = "red";
+        var thingTwo = "blue";
+        console.log(thingOne + " " + thingTwo);
 
+    </script>
+    <script>
+        var fullName = "Jigisha Ahir";
+    </script>
+    <script>
+        var bill = 10.25 + 3.99 + 7.15;
+        var tip = bill * 0.15;
+        var total = bill + tip;
+        console.log("$" + total);
+    </script>
+    <script>
+        var adjective1 = "amazing";
+        var adjective2 = "fun";
+        var adjective3 = "entertaining";
+        var madLib = "The Intro to JavaScript course is " + adjective1 + ". James and Julia are so " + adjective2 + ". I cannot wait to work through the rest of this " + adjective3 + " content!"
+        console.log(madLib);
+    </script>
+    <script>
+        var firstName = "Julia";
+        var interest = "cat";
+        var hobby = "play video games";
+        var awesomeMessage = "Hi, my name is " + firstName + ". I love " + interest + ". In my spare time, I like to " + hobby + ".";
+        console.log(awesomeMessage);
+    </script>
+    <script>
+        var a = 1;
+        var b = 2;
+
+        if (a > b) {
+            console.log("a is greater than b");
+        } else {
+            console.log("a is less than or equal to b");
+        }
+    </script>
+    <script>
+        var runner = "Kendyll";
+        var position = 2;
+        var medal;
+
+        if (position === 1) {
+            medal = "gold";
+        } else if (position === 2) {
+            medal = "silver";
+        } else if (position === 3) {
+            medal = "bronze";
+        } else {
+            medal = "pat on the back";
+        }
+
+        console.log(runner + " received a " + medal + " medal.");
+    </script>
+    <script>
+        var number = 5;
+        if (number % 2 === 0) {
+            console.log("even");
+        } else {
+            console.log("odd");
+        }
+    </script>
+    <script>
+        var musicians = 20;
+
+        if (musicians <= 0) {
+            console.log("not a group");
+        } else if (musicians === 1) {
+            console.log("solo");
+        } else if (musicians === 2) {
+            console.log("duet");
+        } else if (musicians === 3) {
+            console.log("trio");
+        } else if (musicians === 4) {
+            console.log("quartet");
+        } else if (musicians >= 5) {
+            console.log("this is a large group");
+        }
+    </script>
+    <script>
+        var room = 'billiards room';
+        var suspect = "Mr. Parkes";
+        var weapon = "";
+        var solved = false;
+        if (room === 'ballroom') {
+            weapon = 'poison';
+            if (suspect === "Mr. Kalehoff")
+                solved = true;
+        }
+        if (room === 'ballroom' && suspect === "Mr. Kalehoff") {
+            weapon = "poison";
+            solved = true;
+        }
+        else if (room === 'gallary') {
+            weapon = 'trophy';
+            if (suspect === 'Ms. Van Cleve')
+                solved = true;
+        }
+        else if (room === 'billiards room') {
+            weapon = 'pool stick';
+            if (suspect === 'Mrs. Sparr')
+                solved = true;
+        }
+        else if (room === 'dining room') {
+            weapon = 'knife';
+            if (suspect === 'Kalehoff')
+                solved = true;
+        }
+        if (solved) {
+            console.log(suspect + "did it in the" + room + "with the" + weapon + "!");
+        }
+    </script>
 </body>
 
 </html>
