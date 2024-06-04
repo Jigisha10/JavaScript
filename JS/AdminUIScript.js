@@ -103,6 +103,13 @@ document.getElementById('editForm').onsubmit = function (event) {
     const userName = document.getElementById('userName').value;
     const userEmail = document.getElementById('userEmail').value;
     const userRole = document.getElementById('userRole').value;
+
+    const row = document.querySelector(`tr[data-user-id='${userId}']`);
+    if (row) {
+        row.querySelector('.userName').textContent = userName;
+        row.querySelector('.userEmail').textContent = userEmail;
+        row.querySelector('.userRole').textContent = userRole;
+    }
     //console.log('User ID:', userId);
     console.log('User Name:', userName);
     console.log('User Email:', userEmail);
@@ -114,7 +121,7 @@ document.getElementById('editForm').onsubmit = function (event) {
 
 // Select All Checkbox
 
-document.getElementById('selectAll').addEventListener('change', function() {
+document.getElementById('selectAll').addEventListener('change', function () {
     const checkboxes = document.querySelectorAll('.userCheckbox');
     checkboxes.forEach(checkbox => {
         checkbox.checked = this.checked;
@@ -128,5 +135,31 @@ function editUser(userId) {
     // Implement your edit functionality here
 }
 
-getfacts();
+// Search Filter
+
+function myFunction() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("searchFilter");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("dataTable");
+    tr = table.getElementsByTagName("tr");
+    
+    for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        tr[i].style.display = "none"; // Initially hide the row
+        td = tr[i].getElementsByTagName("td");
+        
+        for (j = 1; j < td.length; j++) { // Start from 1 to skip the checkbox column
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = ""; // Show the row
+                    break; // No need to check other columns
+                }
+            }
+        }
+    }
+}
+
+
+//getfacts();
 

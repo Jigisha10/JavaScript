@@ -197,6 +197,77 @@
             console.log(suspect + "did it in the" + room + "with the" + weapon + "!");
         }
     </script>
+
+    <!-- 04/06/2024 QUIZ-->
+    <script>
+        var flavor = "vanilla";
+        var vessel = "cone";
+        var toppings = "sprinkles";
+        if ((flavor === "vanilla" || flavor === "chocholate") && (vessel === "cone" || vessel === "bowl") && (toppings === "sprinkles" || toppings === "peanuts")) {
+            console.log("I'd like two scoops of " + flavor + "ice cream in a " + vessel + "with " + toppings + ".");
+        }
+        // // change the values of `flavor`, `vessel`, and `toppings` to test your code
+        // var flavor = "strawberry";
+        // var vessel = "cone";
+        // var toppings = "cookies";
+
+        // // Add your code here
+        // if ((flavor === "vanilla" || flavor === "chocolate") && (vessel === "cone" || vessel === "bowl") && (toppings === "sprinkles" || toppings === "peanuts")) {
+        //     console.log("I'd like two scoops of " + flavor + "ice cream in a " + vessel + "with " + toppings + ".")
+        // }
+    </script>
+    <script>
+        var shirtWidth = 23;
+        var shirtLength = 30;
+        var shirtSleeve = 8.71;
+        var size = "NA";
+        if ((shirtWidth >= 18 && shirtWidth < 20) && (shirtLength >= 28 && shirtLength < 29) && (shirtSleeve >= 8.13 && shirtSleeve < 8.38)) {
+            size = "S";
+        }
+        else if ((shirtWidth >= 20 && shirtWidth < 22) && (shirtLength >= 29 && shirtLength < 30) && (shirtSleeve >= 8.38 && shirtSleeve < 8.63)) {
+            size = "M";
+        }
+        else if ((shirtWidth >= 22 && shirtWidth < 24) && (shirtLength >= 30 && shirtLength < 31) && (shirtSleeve >= 8.63 && shirtSleeve < 8.88)) {
+            size = "L";
+        }
+        else if ((shirtWidth >= 24 && shirtWidth < 26) && (shirtLength >= 31 && shirtLength < 33) && (shirtSleeve >= 8.88 && shirtSleeve < 9.63)) {
+            size = "XL";
+        }
+        else if ((shirtWidth >= 26 && shirtWidth < 28) && (shirtLength >= 33 && shirtLength < 34) && (shirtSleeve >= 9.63 && shirtSleeve < 10.13)) {
+            size = "2XL";
+        }
+        else if ((shirtWidth >= 28) && (shirtLength >= 34) && (shirtSleeve >= 10.13)) {
+            size = "3XL";
+        }
+        else {
+            size = "NA";
+        }
+        console.log(size);
+    </script>
+    <script>
+        var balance = 325.00;
+        var checkBalance = true;
+        var isActive = false;
+        if (checkBalance === true) {
+            if (isActive === true && balance > 0) {
+                console.log("Your blance is $ " + balance.toFixed(2) + ".");
+            }
+            else if (isActive === true && balance === 0) {
+                console.log("Your account is empty.");
+            }
+            else if (isActive === true && balance < 0) {
+                console.log("Your blance is negative. please contact bank");
+            }
+            else if (isActive === false) {
+                console.log("Your account is no longer active.");
+            }
+        }
+        else {
+            console.log("Thank you. Have a nice day!");
+        }
+
+
+    </script>
 </body>
 
 </html>

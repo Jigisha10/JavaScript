@@ -11,10 +11,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body onload="getfacts()">
     <div class="container">
         <div class="tablebox">
-            <input class="inputbox" type="text" placeholder="Search" />
+            <input class="inputbox" type="text" id="searchFilter" onclick="myFunction()" placeholder="Search" />
             <table>
                 <thead>
                     <tr>
