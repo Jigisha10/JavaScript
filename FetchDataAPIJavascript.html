@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="text-center"><input type="checkbox" id="selectAll"></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+            <!-- Data will be insert here -->
+        </tbody>
+    </table>
+
+    <!-- <script>
+        const getData = async ()=>{
+            let data = "hello world";
+            return data;
+        } 
+        getData().then(data => console.log(data));
+    </script>-->
+    <script>
+        let p = fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"); // promise 
+        p.then((value1) => {
+            console.log(value1.status);
+            console.log(value1.ok);
+            return value1.json;
+        }).then((value2) => {
+            console.log(value2);
+        })
+    </script>
+
+    <script>
+        const getData = async () => {
+            let x = await fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"); // data lane ki promise 
+            let data = await x.json();  // data parse 
+            console.table(data);
+            populateTable(data);
+           document.write(data);
+        }
+        // function populateTable(data){
+        //     const tableBody = document.getElementById('dataTable');
+        // }
+        getData();
+    </script>
+</body>
+
+</html>
