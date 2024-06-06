@@ -5,55 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Css/AdminUi.css" />
 </head>
 
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th class="text-center"><input type="checkbox" id="selectAll"></th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th class="text-center">Action</th>
-            </tr>
-        </thead>
-        <tbody id="dataTable">
-            <!-- Data will be insert here -->
-        </tbody>
-    </table>
+    <h1 class="text-center">Data Table</h1>
+    <div class="container">
+        <input class="inputbox" type="text" id="search-input" onkeyup="myFunction()" placeholder="Search by name, email or role" />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center"><input type="checkbox" id="selectAll"></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody id="dataTable">
+                <!-- Data will be insert here -->
+            </tbody>
+        </table>
+        <button class="delete-btn">Delete Selected</button>
+    </div>
 
-    <!-- <script>
-        const getData = async ()=>{
-            let data = "hello world";
-            return data;
-        } 
-        getData().then(data => console.log(data));
-    </script>-->
-    <script>
-        let p = fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"); // promise 
-        p.then((value1) => {
-            console.log(value1.status);
-            console.log(value1.ok);
-            return value1.json;
-        }).then((value2) => {
-            console.log(value2);
-        })
-    </script>
-
-    <script>
-        const getData = async () => {
-            let x = await fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"); // data lane ki promise 
-            let data = await x.json();  // data parse 
-            console.table(data);
-            populateTable(data);
-           document.write(data);
-        }
-        // function populateTable(data){
-        //     const tableBody = document.getElementById('dataTable');
-        // }
-        getData();
-    </script>
+    <script src="JS/FetchDataAPI.js"></script>
 </body>
 
 </html>

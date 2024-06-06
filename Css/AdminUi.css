@@ -33,6 +33,10 @@ td {
     border: 1px solid #ddd;
 }
 
+table th {
+    background-color: #f0f0f0;
+}
+
 th,
 td {
     padding: 8px;
@@ -86,23 +90,30 @@ td {
     text-decoration: none;
     cursor: pointer;
 }
+
 .editicon {
-    margin-right: 10px;
+    margin-right: 4px;
 }
+
 .deleteicon {
     color: #cd0404;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
-#dataTable td:last-child,#dataTable td:first-child {
+
+#dataTable td:last-child,
+#dataTable td:first-child {
     text-align: center;
 }
+
 label {
     display: block;
     font-weight: 600;
     margin-bottom: 6px;
 }
+
 .minput {
     height: 35px;
     width: 95%;
@@ -111,6 +122,7 @@ label {
     padding: 0 9px;
     margin-bottom: 15px;
 }
+
 .save-btn {
     background: #000;
     width: 100%;
@@ -122,4 +134,30 @@ label {
     cursor: pointer;
     font-weight: 600;
     font-size: 15px;
+}
+
+/* fetch data API Css */
+.editicon,
+.deleteicon {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.delete-btn {
+    background-color: #cd0404;
+    color: #fff;
+    height: 40px;
+    width: 150px;
+    border: 1px solid #cd0404;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.table{
+    margin-bottom: 20px;
+}
+.mt-0{
+    margin-top: 0;
 }
