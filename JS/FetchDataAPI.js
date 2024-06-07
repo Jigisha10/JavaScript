@@ -143,13 +143,14 @@ function myFunction() {
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "table-row";
                 visible = true;
-                break
             } else {
                 tr[i].style.display = "none";
             }
         }
     }
-
+    if(!visible){
+        noDataRow.style.display = "table-row";
+    }
 }
 
 

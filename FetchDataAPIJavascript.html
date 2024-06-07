@@ -14,11 +14,14 @@
 <body>
     <h1 class="text-center">Data Table</h1>
     <div class="container">
-        <input class="inputbox" type="text" id="search-input" onkeyup="myFunction()" placeholder="Search by name, email or role" />
+        <div class="input-search">
+            <input class="inputbox" type="text" id="search-input" onkeyup="myFunction()" placeholder="Search by name, email or role" />
+            <button id="clear-button" onclick="clearSearch()" class="clearbtn" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th class="text-center"><input type="checkbox" id="selectAll"></th>
+                    <th class="text-center"><input type="checkbox" id="selectAll" onclick="selectAllCheckbox()"></th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -27,6 +30,9 @@
             </thead>
             <tbody id="dataTable">
                 <!-- Data will be insert here -->
+                 <tr id="no-data">
+                    <td colspan="5">No Data Found</td>
+                 </tr>
             </tbody>
         </table>
         <button class="delete-btn">Delete Selected</button>

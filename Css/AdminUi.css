@@ -145,6 +145,7 @@ label {
     width: 25px;
     cursor: pointer;
 }
+
 .delete-btn {
     background-color: #cd0404;
     color: #fff;
@@ -155,9 +156,32 @@ label {
     font-size: 14px;
     cursor: pointer;
 }
-.table{
+
+.table {
     margin-bottom: 20px;
 }
-.mt-0{
+
+.mt-0 {
     margin-top: 0;
+}
+
+.clearbtn {
+    position: absolute;
+    margin-left: -33px;
+    margin-top: 14px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    /* color: #9f9f9f; */
+}
+#no-data {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+}
+#no-data td{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px !important;
 }
