@@ -41,7 +41,7 @@ function populateTable(data) {
         // User Action
         const cellAction = document.createElement('td');
         cellAction.innerHTML = `<button title="Edit" class="editicon fa-solid fa-pen-to-square"></button>
-                <button title="Delete" class="deleteicon fa-solid fa-trash"></button>`
+                <button title="Delete" class="deleteicon fa-solid fa-trash" id="delete-user" onclick="deleteUser(this)"></button>`
         row.appendChild(cellAction);
 
         tableBody.appendChild(row);
@@ -50,65 +50,6 @@ function populateTable(data) {
 }
 
 //----------- Search Filter Code ----------------//
-
-// function myFunction() {
-//     // var input, filter, table, tr, td, i, j, txtValue;
-//     // input = document.getElementById("search-input");
-//     // filter = input.value.toUpperCase();
-//     // table = document.getElementById("dataTable");
-//     // tr = table.getElementsByTagName("tr");
-
-//     // // Show clear button if there is input, otherwise hide it
-//     // var clearButton = document.getElementById("clear-button");
-//     // clearButton.style.display = input.value ? "inline-block" : "none";
-
-//     // // Hide the "No Data found"  
-//     // var noDataRow = document.getElementById("no-data");
-//     // noDataRow.style.display = "none";
-//     // visible = false;
-
-//     // for (i = 1; i < tr.length; i++) {
-//     //     if (tr[i].id === "no-data") {
-//     //         continue;  // skip the no data found
-//     //     }
-
-//     //     tr[i].style.display = "none";
-//     //     td = tr[i].getElementsByTagName("td");
-//     //     for (j = 0; j < td.length; j++) {
-//     //         if (td[j]) {
-//     //             txtValue = td[j].textContent || td[j].innerText;
-//     //             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//     //                 tr[i].style.display = "table-row";
-//     //                 visible = true;
-//     //                 break
-//     //             }
-//     //         }
-//     //     }
-//     // }
-//     // if (!visible) {
-//     //     noDataRow.style.display = "table-row";
-//     // }
-//     var input, filter, table, tr, td, i, txtValue;
-//     input = document.getElementById("search-input");
-//     filter = input.value.toUpperCase();
-//     table = document.getElementById("dataTable");
-//     tr = table.getElementsByTagName("tr");
-//     for (i = 0; i < tr.length; i++) {
-//         td = tr[i].getElementsByTagName("td");
-//         if (td === txtValue.toUpperCase().indexOf(filter) > -1 ) {
-//            // txtValue = (td[1].textContent || td[1].innerText) + " " + (td[2].textContent || td[2].innerText) + " " + (td[3].textContent || td[3].innerText);
-
-//             txtValue = (td[1].textContent || td[1].innerText) + " " +
-//                        (td[2].textContent || td[2].innerText) + " " +
-//                        (td[3].textContent || td[3].innerText);
-//             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//                 tr[i].style.display = "";
-//             } else {
-//                 tr[i].style.display = "none";
-//             }
-//         }
-//     }
-// }
 
 function myFunction() {
     var input, filter, table, tr, td, i, txtValue;
@@ -148,7 +89,7 @@ function myFunction() {
             }
         }
     }
-    if(!visible){
+    if (!visible) {
         noDataRow.style.display = "table-row";
     }
 }
@@ -157,10 +98,10 @@ function myFunction() {
 //----------- clear search data ------------- //
 
 function clearSearch() {
-    var input = document.getElementById("search-input");
-    var table = document.getElementById("dataTable");
-    var tr = table.getElementsByTagName("tr");
-    var clearButton = document.getElementById("clear-button");
+    let input = document.getElementById("search-input");
+    let table = document.getElementById("dataTable");
+    let tr = table.getElementsByTagName("tr");
+    let clearButton = document.getElementById("clear-button");
 
     input.value = "";
     clearButton.style.display = "none";
@@ -174,10 +115,32 @@ function clearSearch() {
 //----------- Select ALL Checkbox Code ----------// 
 
 function selectAllCheckbox() {
-    var selectAll = document.getElementById("selectAll");
-    var checkboxes = document.querySelectorAll(".userCheckbox");
+    let selectAll = document.getElementById("selectAll");
+    let checkboxes = document.querySelectorAll(".userCheckbox");
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = selectAll.checked;
+    }
+}
+
+//---------- delete icon functionality ---------------//
+
+function deleteUser(button) {
+    if (confirm("Are you sure you want to delete this record?")) {
+        const row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+}
+
+//---------- Delete selected Checkbox Functionality --------------//
+
+function deleteSelected() {
+    if (confirm("Are you sure you want to delete the selected records?")) {
+        let table = document.getElementById("dataTable");
+        let checkboxes = table.querySelectorAll(".userCheckbox:checked");
+        for (let i = checkboxes.length - 1; i >= 0; i--) {
+            let row = checkboxes[i].parentElement.parentElement;
+            row.parentElement.removeChild(row);
+        }
     }
 }
 
