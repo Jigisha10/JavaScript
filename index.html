@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Css/AdminUi.css" />
+</head>
+
+<body>
+    <h1 class="text-center">Data Table</h1>
+    <div class="container">
+        <div class="input-search">
+            <input class="inputbox" type="text" id="search-input" onkeyup="SearchFilter()"
+                placeholder="Search by name, email or role" />
+            <button id="clear-button" onclick="clearSearch()" class="clearbtn" style="display: none;"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center"><input type="checkbox" id="selectAll" onclick="selectAllCheckbox()"></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody id="dataTable">
+                <!-- Data will be insert here -->
+                <tr id="no-data">
+                    <td colspan="5">No Data Found</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Pagination -->
+        <div class="pageination-block">
+            <button class="delete-btn" onclick="deleteSelected()">Delete Selected</button>
+            <ul class="pagination" id="pagination"></ul>
+        </div>
+    </div>
+    <script>
+        let data = [];
+        const currentPage = 1;
+        const itemsPerPage = 10;
+
+        const getData = async () => {
+            let response = await fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"); // data lane ki promise 
+            let data = await response.json();  // data parse 
+            // console.table(data);
+            populateTable(data, currentPage);
+            //document.write(data);
+            updatePagination(data);
+
+        }
+        function populateTable(data, page = 1) {
+            const tableBody = document.getElementById('dataTable');
+
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginationItems = data.slice(startIndex, endIndex);
+
+            for (let i = 0; i < paginationItems.length; i++) {
+                const user = paginationItems[i];
+                const row = document.createElement('tr');
+
+                // checkbox 
+                const cellCheckbox = document.createElement('td');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = user.id
+                checkbox.className = 'userCheckbox';
+                cellCheckbox.appendChild(checkbox);
+                row.appendChild(cellCheckbox);
+
+                //User Name
+                const cellName = document.createElement('td');
+                cellName.textContent = user.name;
+                row.appendChild(cellName);
+
+                // User Email
+                const cellEmail = document.createElement('td');
+                cellEmail.textContent = user.email;
+                row.appendChild(cellEmail);
+
+                // User Role
+                const cellRole = document.createElement('td');
+                cellRole.textContent = user.role;
+                row.appendChild(cellRole);
+
+                // User Action
+                const cellAction = document.createElement('td');
+                cellAction.innerHTML = `<button title="Edit" class="editicon fa-solid fa-pen-to-square"></button>
+                <button title="Delete" class="deleteicon fa-solid fa-trash" id="delete-user" onclick="deleteUser(this)"></button>`
+                row.appendChild(cellAction);
+
+                tableBody.appendChild(row);
+            }
+
+        }
+
+        function updatePagination(pageNumber) {
+            let table = document.getElementById("dataTable");
+            let tr = table.getElementsByTagName('tr');
+            pageNumber = Math.ceil(pageNumber / 10) || Math.ceil(tr.length / 10);
+            document.getElementById('pagination').innerHTML = '';
+
+            for (let i = 1; i <= pageNumber; i++) {
+                let pages = document.createElement('button');
+                pages.innerHTML = i;
+                pages.id = `totalPage${i}`;
+                // let listTag = document.createElement('span');
+                // listTag.innerHTML = '';
+                document.getElementById('pagination').append(pages);
+            }
+        }
+        document.addEventListener('click', function (event) {
+            let input = document.getElementById("search-input").value;
+            let pageNumber = event.target.id;
+            let page = pageNumber.includes('totalPage');
+            let table = document.getElementById("dataTable");
+            let tr = table.getElementsByTagName('tr');
+            if (input == '' && page) {
+                let pageStart = pageNumber.charAt(9) - 1;
+                let start = pageNumber.charAt(9) == 1 ? 1 : Number(`${pageStart}1`);
+                let end = start + 10;
+                for (let i = 1; i < tr.length; i++) {
+                    if (i >= start && i < end) {
+                        tr[i].style.display = "table-row";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            } else {
+                if (page) {
+                    let show = SearchFilter();
+                    let pageStart = pageNumber.charAt(9) - 1;
+                    let showStart = pageNumber.charAt(9) == 1 ? 0 : Number(`${pageStart}1`);
+                    let showEnd = showStart + 10;
+                    for (let i = 0; i < tr.length; i++) {
+                        if (i >= showStart && i < showEnd && show.display[i]) {
+                            documen.getElementById(show.displayRow[i]).style.display = "table-row";
+                        } else if ((i < showStart || i > showEnd) && show.displayRow[i]) {
+                            document.getElementById(show.displayRow[i]).style.display = "none";
+                        } else {
+                            if (show.hideRow[i]) {
+                                document.getElementById(show.hideRow[i]).style.display = "none";
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        //----------- Select ALL Checkbox Code ----------// 
+
+        function selectAllCheckbox() {
+            let selectAll = document.getElementById("selectAll");
+            let checkboxes = document.querySelectorAll(".userCheckbox");
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = selectAll.checked;
+            }
+        }
+
+        //---------- delete icon functionality ---------------//
+
+        function deleteUser(button) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                const row = button.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+            }
+
+        }
+
+        //---------- Delete selected Checkbox Functionality --------------//
+
+        function deleteSelected() {
+            if (confirm("Are you sure you want to delete the selected records?")) {
+                let table = document.getElementById("dataTable");
+                let checkboxes = table.querySelectorAll(".userCheckbox:checked");
+                for (let i = checkboxes.length - 1; i >= 0; i--) {
+                    let row = checkboxes[i].parentElement.parentElement;
+                    row.parentElement.removeChild(row);
+                }
+            }
+        }
+        getData();
+    </script>
+
+</body>
+
+</html>

@@ -15,8 +15,10 @@
     <h1 class="text-center">Data Table</h1>
     <div class="container">
         <div class="input-search">
-            <input class="inputbox" type="text" id="search-input" onkeyup="myFunction()" placeholder="Search by name, email or role" />
-            <button id="clear-button" onclick="clearSearch()" class="clearbtn" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            <input class="inputbox" type="text" id="search-input" onkeyup="SearchFilter()"
+                placeholder="Search by name, email or role" />
+            <button id="clear-button" onclick="clearSearch()" class="clearbtn" style="display: none;"><i
+                    class="fa-solid fa-xmark"></i></button>
         </div>
         <table class="table">
             <thead>
@@ -30,15 +32,20 @@
             </thead>
             <tbody id="dataTable">
                 <!-- Data will be insert here -->
-                 <tr id="no-data">
+                <tr id="no-data" style="display:none;">
                     <td colspan="5">No Data Found</td>
-                 </tr>
+                </tr>
             </tbody>
         </table>
-        <button class="delete-btn" onclick="deleteSelected()">Delete Selected</button>
+        <!-- Pagination -->
+        <div class="pageination-block">
+            <button class="delete-btn" onclick="deleteSelected()">Delete Selected</button>
+            <ul class="pagination" id="pagination"></ul>
+        </div>
     </div>
 
     <script src="JS/FetchDataAPI.js"></script>
+    <!-- <script src="chatgpt.js"></script> -->
 </body>
 
 </html>

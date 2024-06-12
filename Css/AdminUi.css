@@ -14,8 +14,8 @@ body {
 }
 
 .inputbox {
-    height: 35px;
-    width: 250px;
+    height: 40px;
+    width: 300px;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 5px 15px;
@@ -30,7 +30,7 @@ table {
 table,
 th,
 td {
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 table th {
@@ -96,7 +96,7 @@ td {
 }
 
 .deleteicon {
-    color: #cd0404;
+    color: #ef6969;
 }
 
 .text-center {
@@ -147,11 +147,11 @@ label {
 }
 
 .delete-btn {
-    background-color: #cd0404;
+    background-color: #ef6969;
     color: #fff;
     height: 40px;
     width: 150px;
-    border: 1px solid #cd0404;
+    border: 1px solid #ef6969;
     border-radius: 50px;
     font-size: 14px;
     cursor: pointer;
@@ -168,24 +168,64 @@ label {
 .clearbtn {
     position: absolute;
     margin-left: -33px;
-    margin-top: 14px;
+    margin-top: 16px;
     background-color: #fff;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    /* color: #9f9f9f; */
+   
 }
+
 #no-data {
     display: none;
     text-align: center;
     font-size: 16px;
 }
-#no-data td{
+
+#no-data td {
     font-size: 20px;
     font-weight: bold;
     padding: 15px !important;
 }
-/* tr:nth-child(odd) {background-color: #f2f2f2;} */
-tr:hover{
+
+
+tr:hover {
     background-color: #f5f5f5;
+}
+
+/* pagination css */
+ul.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    margin: 0 auto;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.pagination li {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination li.dots {
+    cursor: default;
+}
+
+.active,
+.btn:hover {
+    background-color: #ef6969;
+    color: #fff;
+}
+.pageination-block{
+    display: flex;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
 }
