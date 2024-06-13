@@ -35,16 +35,19 @@ function populateTable(data, page = 1) {
         //User Name
         const cellName = document.createElement('td');
         cellName.textContent = user.name;
+        cellName.className = "userName";
         row.appendChild(cellName);
 
         // User Email
         const cellEmail = document.createElement('td');
         cellEmail.textContent = user.email;
+        cellEmail.className = "userEmail"
         row.appendChild(cellEmail);
 
         // User Role
         const cellRole = document.createElement('td');
         cellRole.textContent = user.role;
+        cellRole.className = "userRole";
         row.appendChild(cellRole);
 
         // User Action
@@ -55,11 +58,6 @@ function populateTable(data, page = 1) {
 
         tableBody.appendChild(row);
     }
-    // if (paginationItems.length === 0) {
-    //     document.getElementById("no-data").style.display = "table-row";
-    // } else {
-    //     document.getElementById("no-data").style.display = "none";
-    // }
 }
 
 
@@ -130,7 +128,6 @@ function updatePagination(data) {
         let page = document.createElement('li');
         page.className = 'page-Number';
         page.innerText = i;
-        page.id = `totalPage${i}`;
         paginationDiv.appendChild(page);
     }
     const page = document.querySelectorAll('.page-Number');
@@ -145,48 +142,8 @@ function updatePagination(data) {
         });
     }
 }
-// document.addEventListener('click', function (event) {
-//     let input = document.getElementById("search-input").value;
-//     let data = event.target.id;
-//     let page = data.includes('totalPage');
-//     let table = document.getElementById("dataTable");
-//     let tr = table.getElementsByTagName('tr');
-//     if (input == '' && page) {
-//         let pageStart = data.charAt(9) - 1;
-//         let start = data.charAt(9) == 1 ? 1 : Number(`${pageStart}1`);
-//         let end = start + 10;
-//         for (let i = 1; i < tr.length; i++) {
-//             if (i >= start && i < end) {
-//                 tr[i].style.display = "table-row";
-//             } else {
-//                 tr[i].style.display = "none;"
-//             }
-//         }
-//     } else {
-//         if (page) {
-//             let show = SearchFilter();
-//             let pageStart = data.charAt(9) - 1;
-//             let showStart = data.charAt(9) == 1 ? 0 : Number(`${pageStart}1`);
-//             let showEnd = showStart + 10;
-//             for (let i = 0; i < tr.length; i++) {
-//                 if (i >= showStart && i < showEnd && show.display[i]) {
-//                     document.getElementById(show.displayRow[i].style.display = "table-row");
-//                 } else if ((i < showStart || i > showEnd) && show.displayRow[i]) {
-//                     document.getElementById(show.displayRow[i]).style.display = "none";
-//                 } else {
-//                     if (show.hideRow[i]) {
-//                         document.getElementById(show.hideRow[i]).style.display = "none";
-//                     }
-//                 }
-//             }
-//         }
-//     }
 
-// });
-
-
-
-//----------- clear search data ------------- //
+//clear search data //
 
 function clearSearch() {
     let input = document.getElementById("search-input");
@@ -203,7 +160,7 @@ function clearSearch() {
     input.focus();
 }
 
-//----------- Select ALL Checkbox Code ----------// 
+// Select ALL Checkbox Code 
 
 function selectAllCheckbox() {
     let selectAll = document.getElementById("selectAll");
@@ -213,7 +170,7 @@ function selectAllCheckbox() {
     }
 }
 
-//---------- delete icon functionality ---------------//
+// delete icon functionality //
 
 function deleteUser(button) {
     if (confirm("Are you sure you want to delete this record?")) {
@@ -222,7 +179,7 @@ function deleteUser(button) {
     }
 }
 
-//---------- Delete selected Checkbox Functionality --------------//
+// Delete selected Checkbox Functionality //
 
 function deleteSelected() {
     if (confirm("Are you sure you want to delete the selected records?")) {
@@ -235,53 +192,110 @@ function deleteSelected() {
     }
 }
 
+// Edit data record //
 
-getData();
+function openEditModal(button) {
+    let row = button.parentNode.parentNode;
+    
+    let nameCell = row.querySelector('.userName').textContent;
+    let emailCell = row.querySelector('.userEmail').textContent;
+    let roleCell = row.querySelector('.userRole').textContent;
 
-// Edit modal Function
+    document.getElementById('userName').value = nameCell;
+    document.getElementById('userEmail').value = emailCell;
+    document.getElementById('userRole').value = roleCell;
 
-function openEditModal(user) {
-    const thisRow = user.closest('tr');
-    const editabletd = thisRow.querySelectorAll('.editable');
-    console.log(editabletd);
+    document.getElementById('editForm').setAttribute('data-row', row.rowIndex);
 
     const modal = document.getElementById('editModal');
     modal.style.display = 'block';
 }
+
+document.getElementById('editForm').onsubmit = function (event) {
+    event.preventDefault();
+
+    // Get the modified data from the form
+    let newName = document.getElementById('userName').value;
+    let newEmail = document.getElementById('userEmail').value;
+    let newRole = document.getElementById('userRole').value;
+
+    // Retrieve the row index stored earlier
+    let rowIndex = parseInt(document.getElementById('editForm').getAttribute('data-row'));
+    console.log(rowIndex);
+    let row = document.querySelector('table').rows[rowIndex];
+    console.log(row);
+
+    // Update the table cell values with the modified data
+    row.querySelector('.userName').textContent = newName;
+    row.querySelector('.userEmail').textContent = newEmail;
+    row.querySelector('.userRole').textContent = newRole;
+
+    // Add code to handle form submission and save the data
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'none';
+}
+
 const span = document.getElementById('close');
 span.onclick = function () {
     const modal = document.getElementById('editModal');
     modal.style.display = 'none';
 }
-// Close the modal when the user clicks anywhere outside of the modal
+
 window.onclick = function (event) {
     const modal = document.getElementById('editModal');
     if (event.target == modal) {
         modal.style.display = 'none';
     }
-}
-
-document.getElementById('editForm').onsubmit = function (event) {
-    event.preventDefault();
-    // const userId = document.getElementById('userId').value;
-    const userName = document.getElementById('userName').value;
-    const userEmail = document.getElementById('userEmail').value;
-    const userRole = document.getElementById('userRole').value;
-
-    const row = document.querySelector(`tr[data-user-id='${userId}']`);
-    if (row) {
-        row.querySelector('.userName').textContent = userName;
-        row.querySelector('.userEmail').textContent = userEmail;
-        row.querySelector('.userRole').textContent = userRole;
-    }
-    //console.log('User ID:', userId);
-    console.log('User Name:', userName);
-    console.log('User Email:', userEmail);
-    console.log('User Role:', userRole);
-    // Perform the update operation (e.g., send data to the server)
-    const modal = document.getElementById('editModal');
-    modal.style.display = 'none';
 };
+
+
+
+getData();
+
+// Edit modal Function
+
+// function openEditModal(user) {
+//     const thisRow = user.closest('tr');
+//     const editabletd = thisRow.querySelectorAll('.editable');
+//     console.log(editabletd);
+
+//     const modal = document.getElementById('editModal');
+//     modal.style.display = 'block';
+// }
+// const span = document.getElementById('close');
+// span.onclick = function () {
+//     const modal = document.getElementById('editModal');
+//     modal.style.display = 'none';
+// }
+// // Close the modal when the user clicks anywhere outside of the modal
+// window.onclick = function (event) {
+//     const modal = document.getElementById('editModal');
+//     if (event.target == modal) {
+//         modal.style.display = 'none';
+//     }
+// }
+
+// document.getElementById('editForm').onsubmit = function (event) {
+//     event.preventDefault();
+//     // const userId = document.getElementById('userId').value;
+//     const userName = document.getElementById('userName').value;
+//     const userEmail = document.getElementById('userEmail').value;
+//     const userRole = document.getElementById('userRole').value;
+
+//     const row = document.querySelector(`tr[data-user-id='${userId}']`);
+//     if (row) {
+//         row.querySelector('.userName').textContent = userName;
+//         row.querySelector('.userEmail').textContent = userEmail;
+//         row.querySelector('.userRole').textContent = userRole;
+//     }
+//     //console.log('User ID:', userId);
+//     console.log('User Name:', userName);
+//     console.log('User Email:', userEmail);
+//     console.log('User Role:', userRole);
+//     // Perform the update operation (e.g., send data to the server)
+//     const modal = document.getElementById('editModal');
+//     modal.style.display = 'none';
+// };
 
 
 
