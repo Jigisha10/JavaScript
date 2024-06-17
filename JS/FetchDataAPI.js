@@ -1,4 +1,3 @@
-//let data = [];
 let currentPage = 1;
 const itemsPerPage = 10;
 
@@ -65,7 +64,7 @@ function populateTable(data, page = 1) {
 
 function SearchFilter() {
     var input, filter, table, tr, td, i, txtValue;
-    var pageCount = 0;
+    //var pageCount = 0;
     const displayRow = [];
     const hideRow = [];
     input = document.getElementById("search-input");
@@ -105,7 +104,7 @@ function SearchFilter() {
                 //     tr[i].style.display = "none";
                 // }
                 tr[i].style.display = "table-row";
-                visible = true;
+               // visible = true;
             } else {
                 hideRow.push(tr[i].id)
                 tr[i].style.display = "none";
@@ -192,11 +191,11 @@ function deleteSelected() {
     }
 }
 
-// Edit data record //
+// Edit data functionality modal 
 
 function openEditModal(button) {
     let row = button.parentNode.parentNode;
-    
+
     let nameCell = row.querySelector('.userName').textContent;
     let emailCell = row.querySelector('.userEmail').textContent;
     let roleCell = row.querySelector('.userRole').textContent;
@@ -211,7 +210,7 @@ function openEditModal(button) {
     modal.style.display = 'block';
 }
 
-document.getElementById('editForm').onsubmit = function (event) {
+document.getElementById('editForm').onsubmit = function(event) {
     event.preventDefault();
 
     // Get the modified data from the form
@@ -254,48 +253,6 @@ getData();
 
 // Edit modal Function
 
-// function openEditModal(user) {
-//     const thisRow = user.closest('tr');
-//     const editabletd = thisRow.querySelectorAll('.editable');
-//     console.log(editabletd);
-
-//     const modal = document.getElementById('editModal');
-//     modal.style.display = 'block';
-// }
-// const span = document.getElementById('close');
-// span.onclick = function () {
-//     const modal = document.getElementById('editModal');
-//     modal.style.display = 'none';
-// }
-// // Close the modal when the user clicks anywhere outside of the modal
-// window.onclick = function (event) {
-//     const modal = document.getElementById('editModal');
-//     if (event.target == modal) {
-//         modal.style.display = 'none';
-//     }
-// }
-
-// document.getElementById('editForm').onsubmit = function (event) {
-//     event.preventDefault();
-//     // const userId = document.getElementById('userId').value;
-//     const userName = document.getElementById('userName').value;
-//     const userEmail = document.getElementById('userEmail').value;
-//     const userRole = document.getElementById('userRole').value;
-
-//     const row = document.querySelector(`tr[data-user-id='${userId}']`);
-//     if (row) {
-//         row.querySelector('.userName').textContent = userName;
-//         row.querySelector('.userEmail').textContent = userEmail;
-//         row.querySelector('.userRole').textContent = userRole;
-//     }
-//     //console.log('User ID:', userId);
-//     console.log('User Name:', userName);
-//     console.log('User Email:', userEmail);
-//     console.log('User Role:', userRole);
-//     // Perform the update operation (e.g., send data to the server)
-//     const modal = document.getElementById('editModal');
-//     modal.style.display = 'none';
-// };
 
 
 

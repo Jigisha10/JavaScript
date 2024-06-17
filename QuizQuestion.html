@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Qusetion</title>
+</head>
+
+<body>
+    <!-- 17/06/2024 -->
+    <!-- What will be printed to the console if the following code is run? -->
+    <script>
+        var isGoing = true;
+        var color;
+        if (isGoing) {
+            color = "green";
+        } else {
+            color = "red";
+        }
+        console.log(color);
+        document.write(color);
+    </script>
+    <script>
+        var isGoing = false;
+        var color = isGoing ? "green" : "red";
+        console.log(color);
+        document.write(color);
+    </script>
+    <script>
+        var adult = 'true';
+        var preorder = "true";
+        console.log("It costs $ " + (adult ? "40.00" : "20.00") + " to attend the concert. pick up your tickets at the " + (preorder ? "will call" : "gate") + ".");
+        document.write("It costs $ " + (adult ? "40.00" : "20.00") + " to attend the concert. pick up your tickets at the " + (preorder ? "will call" : "gate") + ".");
+    </script>
+
+    <!-- Navigating the Food Chain (3-8) -->
+    <script>
+        var eatsPlants = false;
+        var eatsAnimals = true;
+        var category = eatsPlants ? (eatsAnimals ? "omnivore" : "herbivore") : (eatsAnimals ? "carnivore" : "undefined");
+        console.log(category);
+    </script>
+    <script>
+        var month = 2;
+
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                days = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+            case 2:
+                days = 28;
+        }
+
+        console.log("There are " + days + " days in this month.");
+    </script>
+    <script>
+        var tier = "none";
+        var output = "You'll receive";
+        switch (tier) {
+            default:
+                output += "one copy of the Exploding kittens card game.";
+        }
+        console.log(output);
+    </script>
+    <script>
+        var prize = "";
+        var winner = "";
+        switch (winner) {
+            case 1:
+                prize += "a trip for two to the Bahamas and ";
+            case 2:
+                prize += "a four piece furniture set.";
+                break;
+            case 3:
+                prize += "a smartwatch and ";
+            default:
+                prize += "tickets to the circus.";
+        }
+        console.log("You've won " + prize);
+    </script>
+
+    <!-- Quiz: Back to School (3-9) -->
+    <script>
+        var education = "no high school diploma";
+        var salary = 0;
+        switch (education) {
+            case "no high school diploma":
+                salary = 25636;
+                break;
+            case "a high school diploma":
+                salary = 35256;
+                break;
+            case "an Associate's degree":
+                salary = 41496;
+                break;
+            case "a Bachelor's degree":
+                salary = 59124;
+                break;
+            case "a Master's degree":
+                salary = 69732;
+                break;
+            case "a Professional degree":
+                salary = 89960;
+                break;
+            case "a Doctoral degree":
+                salary = 84396;
+                break;
+        }
+        console.log("In 2015," + education + "earned an average of $" + salary.toLocaleString("en-US") + "/year.");
+    </script>
+
+    <script>
+        // Murder Mystery (3-4)
+
+        var room = "dining room";
+        var suspect = "Mr. Parkes";
+
+        var weapon = "";
+        var solved = false;
+
+        if (room === "dining room") {
+            weapon = "knife", solved = true, suspect === "Mr. Parkes";
+        } else if (room === "ballroom") {
+            weapon = "poison", solved = true, suspect === "Mr. Kalehoff";
+        } else if (room === "billiards room") {
+            weapon = "pool stick", solved = true, suspect === "Mrs. Sparr";
+        } else {
+            weapon = "trophy", solved = true, suspect === "Ms. Van Cleve";
+        }
+
+        if (solved) {
+            console.log(suspect + " did it in the " + room + " with the " + weapon + "!");
+        }
+    </script>
+</body>
+
+</html>

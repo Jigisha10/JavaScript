@@ -165,17 +165,6 @@ label {
     margin-top: 0;
 }
 
-.clearbtn {
-    position: absolute;
-    margin-left: -33px;
-    margin-top: 16px;
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-   
-}
-
 #no-data {
     display: none;
     text-align: center;

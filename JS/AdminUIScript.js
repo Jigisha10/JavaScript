@@ -3,9 +3,9 @@ const URL = "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/m
 
 const getfacts = async () => {
     console.log("Getting Data....");
-    let response = await fetch(URL);
+    let response = await fetch(URL);  // data lane ki promise 
     console.log(response);
-    let data = await response.json();
+    let data = await response.json(); // data parce karne ki promise
     populateTable(data);
     console.table(data);
 };
